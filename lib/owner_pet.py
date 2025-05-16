@@ -41,8 +41,7 @@ class Owner:
           raise TypeError("All pets must be Pet instances")
       return sorted(owned_pets, key = lambda pet: pet.name)
     
-    for p in sorted:
-        print(p.name)
+
 
         
 
