@@ -46,9 +46,10 @@ class Owner:
         
 
 owner = Owner("Jerome")
+owner1 = Owner("Lina")
 pet1 = Pet("Fido", "dog", owner)
-pet2 = Pet("Jerry", "reptile", "Lina")
-pet3 = Pet("Dico", "dog", "Lavy")
+pet2 = Pet("Jerry", "reptile", owner1)
+pet3 = Pet("Dico", "dog", owner1)
 pet4 = Pet("Echo", "cat", owner)
 # print(f"Pet name: {pet1.name}\nType: {pet1.pet_type}\nOwner: { pet1.owner}")
 # print(Pet.all)
@@ -56,9 +57,15 @@ pet4 = Pet("Echo", "cat", owner)
 for pet in Pet.all:
     print(f"Pet name: {pet.name}, Pet type: {pet.pet_type}, Pet Owner: {pet.owner} ")
 owner.print_pets()
+owner1.print_pets()
+
+
 
 sorted_pets = owner.get_sorted_pets()
-print(sorted_pets)
+sorted_pets = owner1.get_sorted_pets()
+
+for pet in sorted_pets:
+    print(f"Pet name: {pet.name}, Pet type: {pet.pet_type}, Owner: {pet.owner.name if pet.owner else 'None'}")
 
 
 
